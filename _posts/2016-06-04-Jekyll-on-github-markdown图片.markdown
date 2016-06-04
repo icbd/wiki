@@ -10,15 +10,22 @@ categories: 工具
 
 
 完全可以直接把图片放到Jekyll项目下来管理,把Github当做图床.
+
 1. 在项目根目录下新建`pic/`,所有图片都放在这儿或者再新建子目录
 2. 在Markdown文件中这样引用图片:
+
 ```
 ![@CbdFocus](/wiki/pic/face.jpeg)
 ```
+
 其中`wiki`为本项目名.
 
+
+
 ### 缺点
+
 缺点是在本地 `jekyll server` 的时候会提示警告, Jekyll 3 并不能正确处理这个文件路径.
+
 ```
 Error reading file /Users/cbd/vm/learn/wiki/about.md: (<unknown>): found character that cannot start any token while scanning for the next token at line 3 column 8
 ```
