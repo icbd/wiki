@@ -6,7 +6,7 @@ permalink: /about/
 
 基于Jekyll的 Focus's wiki.
 
-![](/pic/face.jpeg)
+![](/icbd/wiki/raw/gh-pages/pic/face.jpeg)
 
 You can find the source code for Jekyll at
 {% include icon-github.html username="jekyll" %} /
