@@ -4,7 +4,7 @@ title: CbdFocus
 permalink: /about/
 ---
 
-![@CbdFocus](/wiki/pic/face.jpeg)
+![@CbdFocus](/wiki/wiki/face.jpeg)
 
 
 You can find the source code for Jekyll at
