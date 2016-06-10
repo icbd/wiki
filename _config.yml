@@ -9,7 +9,7 @@
 title: Focus's wiki
 email: wwwicbd@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  <p>好记性不如烂笔头,站在岸上学不会游泳</p>
+  好记性不如烂笔头,站在岸上学不会游泳
 baseurl: "/wiki" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: CbdFocus
