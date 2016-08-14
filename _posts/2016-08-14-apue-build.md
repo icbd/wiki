@@ -27,7 +27,7 @@ $ sudo cp error.c /usr/local/include/error.c
 
 4) 如果用Xcode, 还是会提示红色叹号找不到'apue.h'.
 
-![build setting](wiki/wiki/buildSetting.png)
+![build setting](/wiki/wiki/buildSetting.png)
 
 
 
