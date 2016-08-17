@@ -5,10 +5,21 @@ date:   2016-08-17
 categories: Helper
 ---
 
-[The Unix Acronym](http://www.roesler-ac.de/wolfram/acro/all.htm)
+# THE UNIX ACRONYM LIST
+
+参考来源
+
+> http://www.roesler-ac.de/wolfram/acro/index.htm
+
+补充搜索
+
+> http://www.abbreviations.com/category/COMPUTING
+
+
+[THE UNIX ACRONYM LIST](http://www.roesler-ac.de/wolfram/acro/index.htm)
 
 |缩写|分类|含义|
-|---:|:---:|:---|
+|:---|:---|:---|
 |.a | Ext | archive |
 |A | HTML | anchor |
 |Aacute | HTML | A with accent acute (also: Oacute etc.) |
@@ -89,9 +100,7 @@ categories: Helper
 |dc | Cmd | desk calculator |
 |DC1 | ASCII | device control 1 (also: DC2, DC3, DC4) |
 |DCE | Misc | distributed computing environment |
-|dd | Cmd | Optinion 1: Dataset Definition (named after the OS/3x0 JCL DD command who's syntax it also ripped off as a joke; see here) |
-|Opinion 2: Copy and convert (called dd because cc is the C compiler; see here) |
-|Opinions 3-n: data, device, disk, dump in various combinations |
+|dd | Cmd | Optinion 1: Dataset Definition (named after the OS/3x0 JCL DD command who's syntax it also ripped off as a joke; see here) <br /> Opinion 2: Copy and convert (called dd because cc is the C compiler; see here) <br /> Opinions 3-n: data, device, disk, dump in various combinations |
 |DD | HTML | dictionary definition |
 |DEC | Org | Digital Equipment Corporation |
 |DEL | ASCII | delete |
@@ -118,10 +127,7 @@ categories: Helper
 |elm | Cmd | electronic mail |
 |EM | ASCII | end of medium |
 |EM | HTML | emphasize |
-|emacs | Cmd | editing macros |
-|Sometimes: Eight megabytes and constantly swapping |
-|or: Escape Meta Alternate Control Shift |
-|or: Emacs makes any computer slow |
+|emacs | Cmd | editing macros <br/ > Sometimes: Eight megabytes and constantly swapping <br/ > or: Escape Meta Alternate Control Shift <br/ > or: Emacs makes any computer slow |
 |ENQ | ASCII | enquiry |
 |env | Builtin | environment |
 |EOT | ASCII | end of transmission |
