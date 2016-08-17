@@ -8,8 +8,8 @@ categories: Helper
 [The Unix Acronym](http://www.roesler-ac.de/wolfram/acro/all.htm)
 
 
-缩写|分类|含义
----:|:---:|:---
+|缩写|分类|含义|
+|---:|:---:|:---|
 .a | Ext | archive
 A | HTML | anchor
 Aacute | HTML | A with accent acute (also: Oacute etc.)
