@@ -127,7 +127,7 @@ categories: Helper
 |elm | Cmd | electronic mail |
 |EM | ASCII | end of medium |
 |EM | HTML | emphasize |
-|emacs | Cmd | editing macros <br/ > Sometimes: Eight megabytes and constantly swapping <br/ > or: Escape Meta Alternate Control Shift <br/ > or: Emacs makes any computer slow |
+|emacs | Cmd | editing macros <br/ > Sometimes: Eight megabytes and constantly swapping <br /> or: Escape Meta Alternate Control Shift <br /> or: Emacs makes any computer slow |
 |ENQ | ASCII | enquiry |
 |env | Builtin | environment |
 |EOT | ASCII | end of transmission |
