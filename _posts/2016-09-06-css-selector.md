@@ -10,6 +10,7 @@ categories: CSS
 ```
 只要定义了attr属性就会选中.
 
+
 ```
 [attr="val"]    绝对匹配
 [attr^="val"]   匹配开头
