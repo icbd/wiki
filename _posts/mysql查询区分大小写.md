@@ -5,8 +5,9 @@ date:   2016-10-18
 categories: DB
 ---
 
-mysql where 默认不区分字段的大小写.
-除了修改数据库配置之外,可以在明确大小敏感的条件前加'binary':
+# 查询判断时的大小写敏感
+
+在明确大小敏感的条件前加 `BINARY` :
 
 ```
 SELECT
@@ -16,4 +17,29 @@ FROM
 WHERE
 	BINARY NAME = 'bob'
 AND BINARY city = 'beijing';
+
 ```
+
+# 数据库名和表名的大小写敏感
+
+如果你遇到的是找不到数据库找不到表之类的问题,
+那么可以看看是不是其中存在大写字母.
+
+`先`将他们改成小写,再在my.cnf里添加这么一项:
+
+```
+[mysqld]
+lower_case_table_names=1
+```
+具体win/mac/Linux的大小写敏感情况具体如何太麻烦了,
+推荐的做法是用mysql的时候,数据库名/表名/字段名 全部小写,用 `_` 分隔.
+
+(然而这个配置并不能让sql判断时大小敏感,很多文章都有歧义)
+
+# 其他
+用brew装的mysql,没找到my.cnf在哪...
+手动在mysql的配置查找目录下新建一个:
+
+
+> Default options are read from the following files in the given order:
+> /etc/my.cnf /etc/mysql/my.cnf /usr/local/etc/my.cnf ~/.my.cnf
