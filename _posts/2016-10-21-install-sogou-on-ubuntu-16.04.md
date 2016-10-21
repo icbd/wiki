@@ -26,7 +26,7 @@ im-config
 
 之后一路yes/next，选项为：fcitx。
 
-![fcitx](/wiki/wiki/fcitx.png)
+![fcitx](/wiki/wiki/im-fcitx.png)
 
 ## 4. 重启机器
 
