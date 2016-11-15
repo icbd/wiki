@@ -79,3 +79,12 @@ $ sudo launchctl load /Library/LaunchDaemons/org.nginx.plist
 ```
 $ ps -ef | grep -E 'php|nginx|redis'
 ```
+
+## 详见
+[https://afoo.me/posts/2014-12-12-understanding-launch-daemons-of-macosx.html](https://afoo.me/posts/2014-12-12-understanding-launch-daemons-of-macosx.html)
+
+[http://launchd.info/](http://launchd.info/)
+
+[https://developer.apple.com/library/content/technotes/tn2083/_index.html](https://developer.apple.com/library/content/technotes/tn2083/_index.html)
+
+[http://paul.annesley.cc/2012/09/mac-os-x-launchd-is-cool/](http://paul.annesley.cc/2012/09/mac-os-x-launchd-is-cool/)
