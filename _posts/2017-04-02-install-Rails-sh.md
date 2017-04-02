@@ -1,7 +1,7 @@
 ---
 layout: post
-title:
-date:
+title:  intall Rails script
+date:   2017-04-02
 categories: notes
 ---
 
