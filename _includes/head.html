@@ -14,6 +14,20 @@
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <script>
+    function loadScriptString(jsCode) {
+      var script = top.document.createElement("script");
+      script.type = "text/javascript";
+      try {
+        script.appendChild(document.createTextNode(jsCode));
+      } catch (ex) {
+        script.text = jsCode;
+      }
+
+      document.body.appendChild(script);
+
+    }
+    loadScriptString('(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7755098768500193", enable_page_level_ads: true});');
+
     (adsbygoogle = window.adsbygoogle || []).push({
       google_ad_client: "ca-pub-7755098768500193",
       enable_page_level_ads: true
