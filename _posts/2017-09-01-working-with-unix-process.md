@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "理解UNIX进程"读书笔记
+title:  理解UNIX进程-笔记
 date:   2017-09-01
 categories: notes
 ---
