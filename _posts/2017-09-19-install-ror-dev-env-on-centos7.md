@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  centos7 安装 Ruby on Rails (RoR) 开发环境
-date:
+date:   2017-09-21
 categories: notes
 ---
 
