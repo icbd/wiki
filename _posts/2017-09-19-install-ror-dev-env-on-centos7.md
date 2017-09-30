@@ -38,6 +38,10 @@ categories: notes
     # gem sources --add https://gems.ruby-china.org/ --remove [https://rubygems.org/](https://rubygems.org/)
     # gem sources -l
     # gem install bundle
+
+    # vi ~/.gemrc
+    gem: --no-rdoc --no-ri
+
     # gem install rails
 ```
 
