@@ -53,7 +53,7 @@ mv /etc/sysconfig/iptables /etc/sysconfig/iptables.bak
 touch /etc/sysconfig/iptables
 systemctl restart iptables.service
 
-/usr/sbin/nginx
+systemctl start nginx.service
 ```
 
 
