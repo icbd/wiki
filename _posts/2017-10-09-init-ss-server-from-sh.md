@@ -9,6 +9,7 @@ categories: notes
 #!/bin/bash
 
 ## basic dev tools
+rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
 yum -y install net-tools bc wget nginx iptables-services git zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel
 
 
