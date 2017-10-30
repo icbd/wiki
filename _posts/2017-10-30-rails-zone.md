@@ -42,3 +42,18 @@ config.active_record.default_timezone = :local
 
 
 > config.active_record.default_timezone 设定从数据库中检索日期和时间时使用 Time.local（设为 :local 时）还是 Time.utc（设为 :utc 时）。默认为 :utc。
+
+
+## 时间操作
+
+实例:
+
+```
+<td><%= passport.end_time.localtime.to_s(:db) rescue "" %></td>
+```
+
+nil 是无法响应 `localtime` 方法的所以加 rescue; to_s(:db) 是 `DATE_FORMATS` 中已有的默认格式化方式.
+
+在 `config/initializers/time_formats.rb` 中设置: `Time::DATE_FORMATS[:date] = '%F' `后,
+就可以使用自定义的 to_s(:date) 参数.
+
