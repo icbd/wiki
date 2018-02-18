@@ -22,6 +22,13 @@ yum install -y epel-release
 yum install -y nginx
 ```
 
+如果还显示找不到 nginx, 启用 epel 后重试:
+```
+yum install -y yum-utils
+yum-config-manager --enable epel
+yum repolist all
+```
+
 ## 启动 Nginx, 设置开机自动启动
 ```
 systemctl start nginx
