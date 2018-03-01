@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  [读书笔记] Web性能权威指南
+title:  读书笔记-Web性能权威指南
 date:   2018-03-01
 categories: BookNotes
 ---
