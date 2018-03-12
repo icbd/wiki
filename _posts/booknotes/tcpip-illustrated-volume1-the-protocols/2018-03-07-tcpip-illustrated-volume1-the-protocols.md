@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  读书笔记-TCP/IP详解 卷1:协议
+title:  读书笔记-TCP/IP详解 卷1:协议-ing
 date:   2018-03-07
 categories: BookNotes
 ---
@@ -229,7 +229,51 @@ ICMP差错报文必须包括生成该差错的IP数据报的IP首部(20~60byte)�
 
 # Ch7 Ping程序
 
+原理: 发送ICMP `echo request` , 等待ICMP `echo reply`.
 
+大多数TCPIP在内核中实现了ICMP服务器.
+
+IP记录路由: 每个处理数据报的路由器将其IP写入IP首部的选项中.
+IP首部长度20~60byte, 选项最大40byte. 除去3byte RR控制字段还剩37byte可用.
+`37/4=9...1` , 最多存放9个IP地址.
+
+centos7中的ping不支持RR.
+
+
+# Ch8 Traceroute 程序
+
+TTL: 跳站计数器, 每经过一个路由就减一.
+对于TTL为0的IP数据报, 路由器应该将之丢弃, 并发回ICMP超时信息.
+
+
+```
+准备一个大于30000的PID的UDP;
+
+将TTL设为1, 即探测第一跳路由, 返回ICMP超时.
+将TTL设为2, 即探测第二跳路由, 返回ICMP超时.
+
+...
+
+将TTL设为n, 即探测最后一跳路由, 返回ICMP端口不可达.
+```
+
+不保证每个IP数据报走的路径都一样.
+
+
+## ping 与 traceroute 对比
+
+ping 发送ICMP, 返回ICMP.
+
+traceroute 发送UDP, 返回ICMP.
+
+ping的回显应答包含分组的发送时间; ping回显应答中包含发起程序的PID;
+
+traceroute返回的差错报文只包含UDP头, 无发送时间; 探针UDP的目的PID从33435开始每次递增一.
+
+ping 每秒发送一个分组(快, 并行); traceroute 发送请求后等到应答再发下一个(慢, 串行).
+
+
+# Ch9 IP选路
 
 
 
