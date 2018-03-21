@@ -1,9 +1,14 @@
 ---
 layout: post
-title:  读书笔记-TCP/IP详解 卷1:协议-ing
+title:  读书笔记-TCP/IP详解 卷1:协议
 date:   2018-03-07
 categories: BookNotes
 ---
+
+![https://img3.doubanio.com/lpic/s1543906.jpg](https://img3.doubanio.com/lpic/s1543906.jpg)
+
+[https://book.douban.com/subject/1088054/](https://book.douban.com/subject/1088054/)
+
 
 ## IP
 
@@ -507,6 +512,13 @@ TCP对字节流内容不做解释, 由应用层处理.
 
 序号, Sequence Number, 对字节流的每个字节进行计数. 32bit无符号数.
 
+在一个TCP连接中传送的字节流中的每一个字节都按顺序编号.
+整个要传送的字节流的起始序号必须在连接建立时设置.
+TCP首部的序号字段指本报文段所发送的数据的 **第一个字节的序号** .
+TCP首部的确认序号是 **期望** 收到的下一个报文段的第一个数据字节的序号.
+
+若确认号为N, 则表明 `N-1` 为止的所有数据都已经正确收到.
+
 TCP首部一般为20byte, 最大60byte.
 
 |标识比特位|用途|
@@ -576,5 +588,61 @@ TCP同时打开, 四次握手, 一条连接.
 
 
 
-# TCP 交互数据流
+# Ch19 TCP 交互数据流
 
+按照分组数量计算, TCP报文段包含成块数据和交互数据.
+
+## Nagle
+
+在较慢的广域网中, 常使用 Nagle 算法来减少小报文段的数目.
+Nagle要求一个TCP连接上最多只能有一个未被确认的未完成小分组,
+在该分组的ACK到达之前不能发送其他小分组.
+
+```
+if there is new data to send
+  if the window size >= MSS and available data is >= MSS
+    send complete MSS segment now
+  else
+    if there is unconfirmed data still in the pipe
+      enqueue data in the buffer until an acknowledge is received
+    else
+      send data immediately
+    end if
+  end if
+end if
+```
+
+
+# Ch20 TCP的成块数据流
+
+UDP 的报文段大小由应用层指定;
+
+TCP 的报文段大小由协议根据窗口值和网络拥塞情况而自动决定.
+
+
+## 对于重复的分组:
+
+接收方: 丢弃新的重复分组, 对老的分组发送ACK;
+
+发送方: 丢弃新的重复ACK;
+
+# Ch21 TCP的超时重传
+
+ARQ, 自动重传.
+发送方发送分组即启动定时器, 在定时器到期之前收到ACK则销毁定时器继续后续发送;
+若直到定时器到期都没收到ACK则重发旧的分组;
+若收到重复的ACK直接丢弃.
+接收方收到分组立即返回ACK;
+若收到重复的分组, 丢弃新的分组, 重发旧的分组.
+
+连续ARQ, 使用滑动窗口. 积累确认, 对按序列到达的最后一个分组发送ACK. go-back-N 对丢失的分组重传.
+
+TCP规定, 即使接收窗口大小为0, 也必须接收: 零窗口探测报文段 / 确认报文段 / 紧急数据报文段 .
+
+# Ch22 TCP坚持定时器
+# Ch23 TCP保活定时器
+
+中间路由可以崩溃, 只要两端主机没有重启, 则连接依然保持建立.
+
+
+# Ch27 FTP 文件传送协议
