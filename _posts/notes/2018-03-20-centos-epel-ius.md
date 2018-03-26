@@ -22,7 +22,7 @@ yum install https://centos7.iuscommunity.org/ius-release.rpm
 一键安装Nginx和PHP
 
 ```
-yum install  php72u-fpm-nginx
+yum install  php72u-fpm-nginx php72u-cli php72u-mysqlnd
 ```
 
 设置开机启动, 开通防火墙
