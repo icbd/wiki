@@ -27,11 +27,10 @@ categories: Rails
 
 2. 添加 Asset Pipeline 预编译配置:
 
+> config/initializers/assets.rb
+
 ```
-# DIY global config
-Rails.application.configure do
-  config.assets.precompile += %w( welcome.css )
-end
+Rails.application.config.assets.precompile += %w( welcome.css signup_login.css )
 ```
 
 3. 在 welcome 页面中引入 welcome 样式
