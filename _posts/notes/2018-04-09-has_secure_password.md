@@ -27,6 +27,6 @@ User.find_by(name: 'david').try(:authenticate, 'mUc3m00RsqyRe') # => user
 
 ## 注意
 
-* 密码明文不能为空
-* 密码明文长度小于等于72
+* 密码明文不能为空 (需要在Model中验证 presence)
+* 密码明文长度小于等于72 (自动验证)
 
