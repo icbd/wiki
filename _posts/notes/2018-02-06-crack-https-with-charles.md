@@ -40,8 +40,17 @@ When using this certificate: Always Trust.
 
 > help => SSL Proxying => Install Charles Root Certificate on a Mobile Device or Remote Browser
 
-先将 Mac 和 IPhone 连接到同一网段下(同一个WIFI), 根据提示, 在 IOS 中找到: 设置 => 无线局域网 => 配置代理 => 手动,
-设置好 Proxy 的地址和端口. 在浏览器中访问 [chls.pro/ssl](chls.pro/ssl) 安装证书, 信任证书.
+先将 Mac 和 IPhone 连接到同一网段下(同一个WIFI), 根据提示, 在 IOS 中找到: 设置 => 无线局域网 => 配置代理 => 手动
+
+
+Charles 菜单: Proxy => Proxy Setting
+
+![proxy-setting.png](/wiki/wiki/proxy-setting.png)
+
+
+设置好 Proxy 的地址和端口.
+
+在手机浏览器中访问 [chls.pro/ssl](chls.pro/ssl) 安装证书, 信任证书.
 
 4. 添加 SSL Proxying Settings
 
