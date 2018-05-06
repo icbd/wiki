@@ -48,3 +48,5 @@ class OpenStruct
   #...others
 end
 ```
+
+> [https://ruby-doc.org/core-1.9.3/Class.html](https://ruby-doc.org/core-1.9.3/Class.html)
