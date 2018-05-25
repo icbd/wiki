@@ -28,7 +28,7 @@ categories: notes
 
 [https://www.charlesproxy.com/download/](https://www.charlesproxy.com/download/)
 
-2. 安装根证书
+2. 安装根证书(on MacOS)
 
 > help => SSL Proxying => Install Charles Root Certificate
 
@@ -36,7 +36,7 @@ When using this certificate: Always Trust.
 
 ![Charles-cert.png](/wiki/wiki/Charles-cert.png)
 
-3. 安装客户端证书
+3. 安装客户端证书(on IOS)
 
 > help => SSL Proxying => Install Charles Root Certificate on a Mobile Device or Remote Browser
 
@@ -52,8 +52,18 @@ Charles 菜单: Proxy => Proxy Setting
 
 在手机浏览器中访问 [chls.pro/ssl](chls.pro/ssl) 安装证书, 信任证书.
 
+最新版本的IOS还需要手动启用证书.
+
 4. 添加 SSL Proxying Settings
 
 添加想要监测的域:
 
 > Proxy => SSL Proxying Settings => Add
+
+也可以使用通配符: `*:*`
+
+5. 配合 shadowsocks
+
+当需要在手机上抓被墙的网站时, 可以让 Charles 使用外部代理(Shadowsocks).
+
+![charles-ss.png](/wiki/wiki/charles-ss.png)
