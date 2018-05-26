@@ -21,9 +21,14 @@ g() {
 	if [ -f "$filename_without_extension.go" ]
 	then
  		/usr/local/go/bin/go build "$filename_without_extension.go"; 
-		/bin/ls -alFh ./"$filename_without_extension"
-		./"$filename_without_extension";
-		rm ./"$filename_without_extension";
+
+ 		# 有报错时不会输出可执行文件
+ 		if [ -f "$filename_without_extension" ]
+ 		then
+			/bin/ls -alFh ./"$filename_without_extension"
+			./"$filename_without_extension";
+			rm ./"$filename_without_extension";
+ 		fi
 	else
  		echo "当前目录没找到: $filename_without_extension.go"
 	fi
