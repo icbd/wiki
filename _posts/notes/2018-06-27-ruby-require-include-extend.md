@@ -105,6 +105,70 @@ C2.say
  
 `extend` 是定义在 `Object` 上的方法.
 
+## Hook
+
+```ruby
+module MM
+  def hi
+    puts "MM"
+  end
+end
+
+module M
+  def self.included(base)
+    puts "#{base} has been included"
+  end
+
+  def self.extended(base)
+    base.extend MM
+    puts "#{base} has been extended"
+  end
+end
+
+class C
+  include M
+  extend M
+
+  def hello
+    puts "this is C instance"
+  end
+end
+
+C.hi
+```
+
+## 使用模块内的子模块来分发实例方法和类方法
+
+```ruby
+module M
+  module M_to_include
+    def hi
+      "hi of M_to_include "
+    end
+  end
+
+  module M_to_extend
+    def hi
+      "hi of M_to_extend"
+    end
+  end
+
+  def self.included(base)
+    base.include M_to_include
+    base.extend M_to_extend
+  end
+end
+
+class C
+  include M
+end
+
+puts C.new.hi
+# hi of M_to_include
+puts C.hi
+# hi of M_to_extend
+```
+
 
 ## 扩展阅读 
 
@@ -117,3 +181,5 @@ C2.say
 [https://ruby-china.org/topics/26037](https://ruby-china.org/topics/26037)
 
 [https://ruby-china.org/topics/26036](https://ruby-china.org/topics/26036)
+
+[https://blog.csdn.net/sunset108/article/details/48956101](https://blog.csdn.net/sunset108/article/details/48956101)
