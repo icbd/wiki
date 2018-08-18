@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Focus on Rails: ActiveSupport::Concern  
+title:  Focus on Rails -- ActiveSupport Concern  
 date:   2018-08-17
 categories: Rails
 ---
@@ -297,7 +297,3 @@ base.class_eval(&@_included_block) if instance_variable_defined?(:@_included_blo
 [https://api.rubyonrails.org/classes/ActiveSupport/Concern.html](https://api.rubyonrails.org/classes/ActiveSupport/Concern.html)
 [https://ruby-china.org/topics/32585](https://ruby-china.org/topics/32585)
 [https://ruby-china.org/topics/26208](https://ruby-china.org/topics/26208)
-
- 
- 
-
