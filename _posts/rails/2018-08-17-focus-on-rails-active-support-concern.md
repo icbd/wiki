@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Focus on Rails -- ActiveSupport Concern  
+title:  Focus on Rails 之 ActiveSupport Concern  
 date:   2018-08-17
 categories: Rails
 ---
