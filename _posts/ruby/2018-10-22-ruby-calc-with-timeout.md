@@ -138,3 +138,25 @@ $ ruby main.rb 40
 ```
 
 (每个点代表100ms的计算耗时)
+
+## 使用 Timeout.timeout
+
+标准库中提供了 `timeout`, 也是用线程实现, 不过是借助 sleep .
+
+```ruby
+require 'timeout'
+
+result = nil
+begin
+  Timeout.timeout(1) {
+    sleep 2
+
+    result = 999
+  }
+rescue Timeout::Error => e
+  puts "timeout..."
+end
+
+puts "main. result:#{result}"
+
+```
