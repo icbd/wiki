@@ -73,6 +73,13 @@ main end
 
 ## 特别注意
 
+1. 
+
+`resource.wait(mutex)` 必须包装在 `mutex.synchronize` 的 block 内使用, 因为唤醒该线程的前提是获得锁.
+ 
+
+2. 
+
 如果等待信号的线程(比如c1或c2)join时并没有其他活跃线程, 会报致命死锁: 
 
 `No live threads left. Deadlock? (fatal)`
