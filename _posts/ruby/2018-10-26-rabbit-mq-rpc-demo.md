@@ -6,7 +6,7 @@ categories: Ruby
 ---
 
 
-[!https://www.rabbitmq.com/img/tutorials/python-six.png](图解)
+![图解](https://www.rabbitmq.com/img/tutorials/python-six.png)
 
 
 ## server.rb
