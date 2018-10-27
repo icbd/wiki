@@ -185,3 +185,111 @@ exit monitor
 		pop 9	queue: [-1, 0]
 		
 ```
+
+# Ruby Queue
+
+Ruby 的标准库中自带了线程安全的FIFO的 `Queue` :
+
+```test
+
+push(object)        入队列
+pop(non_block=false)        出队列
+
+size        队列长度
+empty?      队列是否为空
+clear       清空队列
+close       关闭队列, 关闭之后不能push可以pop. 已关闭的队列为空之后, pop立即返回nil.
+closed?     队列是否关闭
+num_waiting     线程等待数
+
+```
+
+
+```ruby
+
+queue = Queue.new
+queue.push "init"
+
+push_thr_1 = Thread.new do
+  6.times do |i|
+    item = "push-No.#{i}-from-thr1"
+    puts item
+    queue.push(item)
+    sleep 0.3
+  end
+end
+
+push_thr_2 = Thread.new do
+  15.times do |i|
+    item = "push-No.#{i}-from-thr2"
+    puts item
+    queue.push(item)
+    sleep 0.2
+  end
+end
+
+
+# 当queue为空时, pop 默认会阻塞来等待queue的新元素.
+# 该例子中, pop的频率高于push的频率, 等初始的数据pop完之后, 就只能等push完成才能pop一次.
+pop_thr = Thread.new do
+  (1 + 6 + 15).times do |j|
+    item = "pop-No.#{j}"
+    puts "pop\t\t" + queue.pop
+    sleep 0.1
+  end
+end
+
+push_thr_1.join
+push_thr_2.join
+pop_thr.join
+
+puts "main exits."
+
+=begin
+push-No.0-from-thr1
+pop		init
+push-No.0-from-thr2
+pop		push-No.0-from-thr1
+push-No.1-from-thr2
+pop		push-No.0-from-thr2
+push-No.1-from-thr1
+pop		push-No.1-from-thr2
+push-No.2-from-thr2
+pop		push-No.1-from-thr1
+pop		push-No.2-from-thr2
+push-No.2-from-thr1
+push-No.3-from-thr2
+pop		push-No.2-from-thr1
+pop		push-No.3-from-thr2
+push-No.4-from-thr2
+pop		push-No.4-from-thr2
+push-No.3-from-thr1
+pop		push-No.3-from-thr1
+push-No.5-from-thr2
+pop		push-No.5-from-thr2
+push-No.4-from-thr1
+pop		push-No.4-from-thr1
+push-No.6-from-thr2
+pop		push-No.6-from-thr2
+push-No.7-from-thr2
+pop		push-No.7-from-thr2
+push-No.5-from-thr1
+pop		push-No.5-from-thr1
+push-No.8-from-thr2
+pop		push-No.8-from-thr2
+push-No.9-from-thr2
+pop		push-No.9-from-thr2
+push-No.10-from-thr2
+pop		push-No.10-from-thr2
+push-No.11-from-thr2
+pop		push-No.11-from-thr2
+push-No.12-from-thr2
+pop		push-No.12-from-thr2
+push-No.13-from-thr2
+pop		push-No.13-from-thr2
+push-No.14-from-thr2
+pop		push-No.14-from-thr2
+main exits.
+=end
+
+``` 
