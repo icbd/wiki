@@ -10,7 +10,7 @@ permalink: /about/
 ![weixin](/wiki/wiki/wx-qr.jpg){:height="100%" width="50%"}
 
 
-Web Developer at Boohee.
+Ruby Developer at Boohee.
 
 
 ![weixin](/wiki/wiki/boohee-logo.png){:height="100%" width="20%"}
