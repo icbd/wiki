@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode reverse-integer  
+title:  LeetCode No.7 reverse-integer  
 date:   2018-11-06
 categories: algorithm
 ---

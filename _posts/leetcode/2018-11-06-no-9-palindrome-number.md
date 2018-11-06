@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode palindrome-number  
+title:  LeetCode No.9 palindrome-number  
 date:   2018-11-06
 categories: algorithm
 ---
