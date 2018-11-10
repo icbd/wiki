@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.70 climbing-stairs  
+title:  LeetCode Ruby No.70 climbing-stairs  
 date:   2018-11-09
 categories: algorithm
 ---

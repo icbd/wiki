@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.53 maximum-subarray  
+title:  LeetCode Ruby No.53 maximum-subarray  
 date:   2018-11-08
 categories: algorithm
 ---

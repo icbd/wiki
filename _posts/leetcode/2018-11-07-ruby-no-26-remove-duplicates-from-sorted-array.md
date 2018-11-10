@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.26 remove-duplicates-from-sorted-array  
+title:  LeetCode Ruby No.26 remove-duplicates-from-sorted-array  
 date:   2018-11-07
 categories: algorithm
 ---

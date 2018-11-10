@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.28 implement-strstr  
+title:  LeetCode Ruby No.28 implement-strstr  
 date:   2018-11-07
 categories: algorithm
 ---

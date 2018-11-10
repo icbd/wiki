@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.58 length-of-last-word  
+title:  LeetCode Ruby No.58 length-of-last-word  
 date:   2018-11-08
 categories: algorithm
 ---

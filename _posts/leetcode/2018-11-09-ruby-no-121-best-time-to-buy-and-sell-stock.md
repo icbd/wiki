@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.121 best-time-to-buy-and-sell-stock  
+title:  LeetCode Ruby No.121 best-time-to-buy-and-sell-stock  
 date:   2018-11-09
 categories: algorithm
 ---

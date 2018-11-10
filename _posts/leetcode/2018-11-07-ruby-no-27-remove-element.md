@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.27 remove-element  
+title:  LeetCode Ruby No.27 remove-element  
 date:   2018-11-07
 categories: algorithm
 ---

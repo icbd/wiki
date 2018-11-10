@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.9 palindrome-number  
+title:  LeetCode Ruby No.9 palindrome-number  
 date:   2018-11-06
 categories: algorithm
 ---

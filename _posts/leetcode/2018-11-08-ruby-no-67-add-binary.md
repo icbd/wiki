@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.67 add-binary  
+title:  LeetCode Ruby No.67 add-binary  
 date:   2018-11-08
 categories: algorithm
 ---

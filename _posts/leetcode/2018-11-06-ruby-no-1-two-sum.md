@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.1 two-sum  
+title:  LeetCode Ruby No.1 two-sum  
 date:   2018-11-06
 categories: algorithm
 ---

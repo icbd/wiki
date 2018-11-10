@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.38 count-and-say  
+title:  LeetCode Ruby No.38 count-and-say  
 date:   2018-11-07
 categories: algorithm
 ---

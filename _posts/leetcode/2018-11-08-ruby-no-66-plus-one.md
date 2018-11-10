@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.66 plus-one  
+title:  LeetCode Ruby No.66 plus-one  
 date:   2018-11-08
 categories: algorithm
 ---

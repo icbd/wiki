@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.20 valid-parentheses  
+title:  LeetCode Ruby No.20 valid-parentheses  
 date:   2018-11-07
 categories: algorithm
 ---

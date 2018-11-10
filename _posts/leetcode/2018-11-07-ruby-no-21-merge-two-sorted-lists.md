@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.21 merge-two-sorted-lists  
+title:  LeetCode Ruby No.21 merge-two-sorted-lists  
 date:   2018-11-07
 categories: algorithm
 ---

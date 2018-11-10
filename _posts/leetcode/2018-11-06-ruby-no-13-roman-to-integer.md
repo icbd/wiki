@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.13 roman-to-integer
+title:  LeetCode Ruby No.13 roman-to-integer
 date:   2018-11-06
 categories: algorithm
 ---

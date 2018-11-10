@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.35 search-insert-position  
+title:  LeetCode Ruby No.35 search-insert-position  
 date:   2018-11-07
 categories: algorithm
 ---

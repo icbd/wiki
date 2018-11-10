@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  LeetCode No.14 longest-common-prefix
+title:  LeetCode Ruby No.14 longest-common-prefix
 date:   2018-11-06
 categories: algorithm
 ---
