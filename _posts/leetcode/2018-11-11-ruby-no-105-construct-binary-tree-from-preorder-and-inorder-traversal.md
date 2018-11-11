@@ -5,6 +5,14 @@ date:   2018-11-11
 categories: algorithm
 ---
 
+注意分割的边界:
+
+从先序中取第一个为根节点, 找该节点在中序中的位置.
+
+中序中, 该位置左侧为左数, 右侧为右树, 均不包含该节点.
+
+先序中, 第一位已经确认, 分界点属于左树(root-left-right).
+
 ```ruby
 
 # Definition for a binary tree node.
