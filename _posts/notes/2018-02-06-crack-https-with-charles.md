@@ -52,7 +52,13 @@ Charles 菜单: Proxy => Proxy Setting
 
 在手机浏览器中访问 [chls.pro/ssl](chls.pro/ssl) 安装证书, 信任证书.
 
-最新版本的IOS还需要手动启用证书.
+
+## 新版本的IOS还需要手动启用证书:
+
+1. 查看描述文件: 设置-通用-描述文件 
+
+2. 信任描述文件: 设置-通用-关于本机-证书信任设置
+
 
 4. 添加 SSL Proxying Settings
 
