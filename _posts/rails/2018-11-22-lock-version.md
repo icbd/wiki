@@ -4,6 +4,7 @@ title:  Rails lock_version 乐观锁
 date:   2018-11-22
 categories: Rails
 ---
+> [https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html](https://api.rubyonrails.org/classes/ActiveRecord/Locking/Optimistic.html)
 
 # 什么是乐观锁
 
