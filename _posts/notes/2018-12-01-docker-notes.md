@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Docker 学习笔记
+title:  Docker 笔记1之缘起
 date:   2018-12-01
 categories: Docker
 ---
@@ -22,6 +22,19 @@ categories: Docker
 
 ## 容器级虚拟化
 
+依赖内核提供的三个功能: 
+
+### chroot
+
+* 增加系统安全性, 限制用户访问host上原有的根目录结构和文件
+
+* 建立一个与原系统隔离的系统目录结构, 方便用户的开发
+
+* 切换系统的根目录位置，引导 Linux 系统启动以及急救系统等
+
+
+### namespace
+
 运行服务并不需要独立的内核空间, 但是需要独立的用户空间.
 
 
@@ -37,11 +50,26 @@ categories: Docker
 
 用户空间的隔离需要每一种 namespace 的隔离, 依赖Linux内核提供支持, 要求版本不低于 `3.8` .
 
-CPU属于可压缩资源, 内存属于不可压缩资源, 资源分配依赖 `CGroups (Control Groups)` .
+### Control Groups 
 
-### 参考
+CPU属于可压缩资源, 内存属于不可压缩资源, 资源分配依赖内核功能 -- `CGroups (Control Groups)` .
+
+
+### LXC
+
+Linux Container 是一个对 Linux 内核功能进行包装的用户空间接口. 
+它提供了强大的API和简易的工具集, 让用户方便地创建和管理系统或应用的容器. 
+
+LXC 主要关注系统容器. LXC 尽可能提供一种类似 VM 的环境, 但是没有独立的内核和模拟硬件.
+
+LXC 的实现是通过组合 Linux 内核的一系列安全特性, 比如: namespaces, mandatory access control, control groups .
+
+
+
+
+
+## 参考
+
+[https://www.ibm.com/developerworks/cn/linux/l-cn-chroot/index.html](https://www.ibm.com/developerworks/cn/linux/l-cn-chroot/index.html)
 
 [https://www.cnblogs.com/sammyliu/p/5878973.html](https://www.cnblogs.com/sammyliu/p/5878973.html)
-
-
-
