@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CbdFocus
+title: About Me
 permalink: /about/
 ---
 

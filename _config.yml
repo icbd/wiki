@@ -6,11 +6,11 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Focus's wiki
+title: CbdFocus Wiki
 email: wwwicbd@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   好记性不如烂笔头,站在岸上学不会游泳
-baseurl: "/wiki" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.linkedin.com/in/%E5%AE%9D%E6%A0%8B-%E6%9B%B9-488a4198/" # the base hostname & protocol for your site
 twitter_username: CbdFocus
 github_username:  icbd
