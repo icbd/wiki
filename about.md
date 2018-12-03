@@ -10,7 +10,7 @@ permalink: /about/
 ![weixin](/wiki/wiki/wx-qr.jpg){:height="100%" width="50%"}
 
 
-Ruby Developer at Boohee.
+Ruby Developer at WeWork.
 
 
-![weixin](/wiki/wiki/boohee-logo.png){:height="100%" width="20%"}
+![wework](/wiki/wiki/wework-logo.png){:height="100%" width="20%"}
