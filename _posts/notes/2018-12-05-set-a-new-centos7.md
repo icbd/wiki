@@ -29,12 +29,14 @@ systemctl stop firewalld
 systemctl enable iptables
 systemctl start iptables
 
-echo "iptables清空默认规则; 放行http和https; 放行ssh; 放行icmp; 其余的新建连接一律DROP(已有连接默认放行)"
+echo "iptables清空默认规则; 放行环回口; 放行http和https; 放行ssh; 放行icmp; 放行相关和已建立的连接; 其余DROP; "
 iptables -F
-iptables -A INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -p tcp -m multiport --dports 80,443 -j ACCEPT
 iptables -A INPUT -p tcp --dport ${SSH_CLIENT##* } -j ACCEPT
 iptables -A INPUT -p icmp -j ACCEPT
-iptables -A INPUT -m state --state NEW -j DROP
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -P INPUT DROP 
 
 service iptables save
 ```
