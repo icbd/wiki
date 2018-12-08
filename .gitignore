@@ -8,3 +8,6 @@ _site
 
 temp/
 
+_posts/database/2018-11-23-innodb-locks-set.md
+_posts/ruby/2018-11-21-bundle-require.md
+_posts/translate/2018-12-08-iptables-tutorial-1.2.2.md
