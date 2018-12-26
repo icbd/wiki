@@ -12,16 +12,16 @@ rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 rpm -Uvh https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 ```
 
-# 查看启动项
-
-```text
-cat /boot/grub2/grub.cfg | grep menuentry
-```
-
 # 安装 Kernel
 
 ```text
 yum --enablerepo=elrepo-kernel install kernel-ml
+```
+
+# 查看启动项
+
+```text
+cat /boot/grub2/grub.cfg | grep menuentry
 ```
 
 # 设默认启动项
