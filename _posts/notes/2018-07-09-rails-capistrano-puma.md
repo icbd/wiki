@@ -17,7 +17,7 @@ Codename:	Core
 ```
 
 ## 服务器基本设置
-到系统上装好 RVM, Ruby, 和其他常用必要依赖.
+到系统上装好 RVM, Ruby, Node, Nginx, Git .
  
 设置免密码登录Server:
  将mac的 `~/.ssh/id_rsa.pub` 拷贝到服务器 `/root/.ssh/authorized_keys`
@@ -79,7 +79,7 @@ Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 
 注意不要写 `set :scm, :git`, 因为前面已经使用了 `install_plugin Capistrano::SCM::Git`, 否则会导致 puma 出问题.
 
-``ruby
+```ruby
 lock "~> 3.11.0"
 
 set :application, "项目名"
