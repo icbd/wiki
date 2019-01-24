@@ -20,7 +20,7 @@ yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.
 ## 安装 mysql
 
 ```bash
-yum install -y mysql-community-client  mysql-community-server
+yum install -y mysql-community-client  mysql-community-server mysql-community-devel
 
 systemctl start mysqld
 systemctl enable mysqld
