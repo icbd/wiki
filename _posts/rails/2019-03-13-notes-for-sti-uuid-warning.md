@@ -68,6 +68,27 @@ SELECT  1 AS one FROM "fapiao_files" WHERE "fapiao_files"."type" IN ('BlueElectr
 FapiaoFile.exists?(uuid: uuid) ? next : break
 ```
 
+
+### 由此扩展
+
+由于 Rails 按需加载, 首次使用 `ElectroFapiaoFile` 的时候,  Rails 看不到 `BlueElectroFapiaoFile` 和 `RedElectroFapiaoFile`.
+
+此时, `ElectroFapiaoFile.count` 对应的SQL为 :
+
+```
+SELECT COUNT(*) FROM "fapiao_files" WHERE "fapiao_files"."type" IN ('ElectroFapiaoFile')
+```
+
+使用 `require_dependency` 可以解决这个问题, 让Rails在加载 `ElectroFapiaoFile` 的时候就知道
+ `BlueElectroFapiaoFile` 和 `RedElectroFapiaoFile` 的存在. 
+ 因此, 明确依赖关系后, 任何时候调用 `ElectroFapiaoFile.count` 对应的SQL都为:
+ 
+```
+SELECT COUNT(*) FROM "fapiao_files" WHERE "fapiao_files"."type" 
+
+IN ('ElectroFapiaoFile', 'BlueElectroFapiaoFile', 'RedElectroFapiaoFile')
+```
+
 ## reference
 
 [https://api.rubyonrails.org/classes/ActiveRecord/Inheritance.html](https://api.rubyonrails.org/classes/ActiveRecord/Inheritance.html)
