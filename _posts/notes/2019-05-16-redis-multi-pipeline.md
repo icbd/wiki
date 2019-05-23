@@ -266,7 +266,63 @@ nil
 
 还有就是, 如果我们调用了 multi 的 exec 和 discard 的之后, 就不需要手动 `unwatch` .
 
-# TODO watch 跨客户端的情况
+# watch 跨客户端的情况
+
+在同一个client中使用 watch 和 multi :
+
+```ruby
+require 'redis'
+
+redis = Redis.new
+redis1 = Redis.new
+redis2 = Redis.new
+
+redis.set 'k', 100
+
+redis1.watch 'k'
+
+redis.incr 'k'
+
+result = redis1.multi do
+  redis1.incr 'k'
+  redis1.incr 'k'
+end
+
+p result
+p redis.get 'k'
+
+# output:
+# nil
+# "101"
+```
+
+watch 和 multi 在不同的客户端:
+
+```ruby
+require 'redis'
+
+redis = Redis.new
+redis1 = Redis.new
+redis2 = Redis.new
+
+redis.set 'k', 100
+
+redis2.watch 'k'
+
+redis.incr 'k'
+
+result = redis1.multi do
+  redis1.incr 'k'
+  redis1.incr 'k'
+end
+
+p result
+p redis.get 'k'
+
+# output:
+# [102, 103]
+# "103"
+```
 
 
 
