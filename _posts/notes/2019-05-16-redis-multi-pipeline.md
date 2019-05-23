@@ -324,6 +324,51 @@ p redis.get 'k'
 # "103"
 ```
 
+再加一个case:
+
+```ruby
+require 'redis'
+
+redis = Redis.new
+redis1 = Redis.new
+redis2 = Redis.new
+
+redis.set 'k', 100
+
+redis2.watch 'k'
+
+redis.incr 'k'
+
+result1 = redis1.multi do
+  redis1.incr 'k'
+  redis1.incr 'k'
+end
+
+p result1
+p redis.get 'k'
+# [102, 103]
+# "103"
+
+
+result2 = redis2.multi do
+  redis2.incr 'k'
+  redis2.incr 'k'
+end
+
+p result2
+p redis.get 'k'
+# nil
+# "103"
+
+```
+
+小结:
+
+由此证明, watch 的实现是基于连接的. 
+
+同一个连接内, multi 前有 watch 的话, 如果被监视的key发生改变(不限由谁来改动该key的值), multi 将不会执行, 并取消对该key的监视.
+
+在多个不同的连接里, 连接A里对key进行监视, 对连接B里的multi无效, 仅仅对连接A中的下一个multi生效.
 
 
 ## Reference
