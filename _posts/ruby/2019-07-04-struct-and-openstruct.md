@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  Struct
-date:   2019-06-26
+title:  Struct and OpenStruct
+date:   2019-07-04
 categories: Ruby
 ---
+
+## Struct
 
 Struct 的优点是可以方便地封装数据, 对于调用者来说使用方式也更随意, 支持以方法的形式或者哈希或者数组.
 
@@ -56,3 +58,36 @@ jim.members # symbol of array
 jim.values
 jim.to_a
 ```
+
+## OpenStruct
+
+使用 `OpenStruct` 需要显示 `require "ostruct"` .
+
+`OpenStruct` 更像是一个 Hash, 除了用 `[]` 来取值, 还可以用 `.` 来调用, 把key作为方法名来使用.
+
+`OpenStruct` 不能像 `Struct` 那样在 block 内定义方法.
+
+`OpenStruct` 使用了method_missing 来实现, 效率比 Hash 和 Struct 略差.
+
+```ruby
+require "ostruct"
+
+person = OpenStruct.new
+person.name = "John Smith"
+person.age  = 70
+
+person.name      # => "John Smith"
+person.age       # => 70
+person.address   # => nil
+
+
+measurements = OpenStruct.new("length (in inches)" => 24)
+measurements.send("length (in inches)")   # => 24
+
+message = OpenStruct.new(:queued? => true)
+message.queued?                           # => true
+message.send("queued?=", false)
+message.queued?                           # => false
+
+```
+
