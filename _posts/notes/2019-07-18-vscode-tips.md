@@ -5,6 +5,12 @@ date:   2019-07-18
 categories: notes
 ---
 
+## 快捷键
+
+定位当前文件在目录中的位置: `command 0`
+
+光标回到上一个位置: `control -`
+
 ## 文件显示全路径
 
 > settings.json
