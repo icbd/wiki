@@ -20,9 +20,11 @@ categories: golang
 
 > src/main.go
 
-`_ "./logger"` 这里的 `_` 就如同赋值操作时忽略某些值一样, 这里表示引入这个 package 但不使用它. 引入 package 的一个副作用是执行这些文件的 `init()` 方法.
+`_ "./logger"` 这里的 `_` 就如同赋值操作时忽略某些值一样, 这里表示引入这个 package 但不使用它.
 
-这里引入了 `logger` , 就会执行其中的 `init()`.
+引入 package 的一个副作用是执行这些文件的 `init()` 方法. 这里引入了 `logger` , 就会执行其中的 `init()`.
+
+还可以对引入的 package 起别名, 比如: `vendor_pkg` .
 
 ```go
 package main
