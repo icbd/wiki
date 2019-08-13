@@ -192,3 +192,13 @@ Golang 中, 继承的逻辑通过 struct 的嵌入类型实现.
 Golang 允许公开方法返回非公开类型.
 
 ## Chapter6
+
+Web 服务需要在各自独立的 socket 上同时接收多个请求;
+每个 socket 都是独立的;
+如果具有并行执行多个请求的能力, 可以显著提供系统性能.
+
+通信顺序进程: CSP (Communicating Sequential Processes)
+
+goroutine: 独立的工作单元.
+
+channel: 用于 goroutine 之间同步和传递数据.
