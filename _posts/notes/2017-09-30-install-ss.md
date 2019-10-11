@@ -59,9 +59,9 @@ iptables --append INPUT --protocol tcp --dport 59999 -j ACCEPT
 
 echo "关闭其他规则"
 iptables --policy OUTPUT ACCEPT
-iptables --append INPUT --match conntrack --ctstate ESTABLISHED,RELATED --jump ACCEPT
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables --policy INPUT DROP
-iptables --policy FORWARD DROP
+# iptables --policy FORWARD DROP
 
 service iptables save
 ```
