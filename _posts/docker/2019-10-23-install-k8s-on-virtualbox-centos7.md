@@ -14,7 +14,7 @@ categories: k8s
 
 ## 实验用途的最好清空 iptables 
 
-```shell script
+```bash
 cat > clear-iptables <<EOF
 *filter
 :INPUT ACCEPT [0:0]
@@ -28,18 +28,18 @@ iptables -L -nv --line-numbers
   
 ## 升级内核到 4.x-lt
 
-```shell script
+```bash
 yum install kernel-lt.x86_64 --enablerepo=elrepo-kernel
 ```
 
 ## 关闭防火墙(optional)
-```shell script
+```bash
 systemctl stop firewalld
 systemctl disable firewalld
 ```
 
 ## 禁用 selinux
-```shell script
+```bash
 sed -i 's/enforcing/disabled/' /etc/selinux/config
 setenforce 0
 ```
@@ -47,12 +47,12 @@ setenforce 0
 ## 禁用 swap
 注释 `/etc/fstab` 中 swap 的 line.
 使用 `free` 或 `swapon` 查看.
-```shell script
+```bash
 swapoff -a
 ```
 
 ## 配置 net bridge for centos
-```shell script
+```bash
 cat > /etc/sysctl.d/k8s-iptables.conf <<EOF
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables  = 1
@@ -63,7 +63,7 @@ sysctl --system
 ## 安装 docker
 如果需要最新版本, 注意 K8S 要求的 Docker 版本.
 
-```shell script
+```bash
 yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum install yum-utils device-mapper-persistent-data lvm2 docker-ce-18.06.1.ce-3.el7 -y
 
@@ -89,7 +89,7 @@ systemctl start docker
 ```
 
 ## 安装 CRI-O
-```shell script
+```bash
 modprobe overlay
 modprobe br_netfilter
 
@@ -107,7 +107,7 @@ systemctl start crio
 ```
 
 ## 安装 containerd
-```shell script
+```bash
 cat > /etc/modules-load.d/containerd.conf <<EOF
 overlay
 br_netfilter
@@ -128,7 +128,7 @@ systemctl start containerd
 ```
 
 ## 安装 kubernetes
-```shell script
+```bash
 cat > /etc/yum.repos.d/kubernetes.repo <<EOF
 [kubernetes]
 name=Kubernetes
@@ -148,7 +148,7 @@ systemctl start kubelet
 注意init时候的网络参数:
 `netstat -rn`
 
-```shell script
+```bash
 kubeadm init \
   --apiserver-advertise-address <MASTER-NODE-IP> \
   --image-repository registry.aliyuncs.com/google_containers \
@@ -167,26 +167,26 @@ EOF
 ```
 
 ## 安装 Pod 网络插件
-```shell script
+```bash
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 # kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
 # kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml
 ```
 
 ## check nodes pods
-```shell script
+```bash
 kubectl get nodes
 kubectl get pods -n kube-system
 ```
 **debug** 如果配置出问题, 使用下面来重置, 然后再 `kebeadm init ...`
-```shell script
+```bash
 kubeadm reset
 ip link delete cni0
 ip link delete flannel.1
 ```
 
 ## 在 node 上执行join
-```shell script
+```bash
 kubeadm join <MASTER-NODE-IP>:6443 --token <YOUR-TOKEN> \
     --discovery-token-ca-cert-hash <YOUR-CA-CERT>
 ```
@@ -194,7 +194,7 @@ kubeadm join <MASTER-NODE-IP>:6443 --token <YOUR-TOKEN> \
 # 测试
 
 ## nginx
-```shell script
+```bash
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80 --type=NodePort
 
@@ -203,13 +203,13 @@ kubectl get pods,svc -o wide
 
 ## kubernetes-dashboard
 ### 安装
-```shell script
+```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 #kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 ```
 
 ### 创建登录 token:
-```shell script
+```bash
 kubectl get pods,svc -o wide -n kube-system
 
 cat > /root/k8s-sa.yaml <<EOF
