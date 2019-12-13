@@ -59,8 +59,7 @@ class Ticker
       current_price = PriceAPI.fetch(stock_code: @stock_code)
       print "Current price: #{current_price}\n"
       if current_price != last_price
-        changed
-        notify_observers(time: Time.now, price: current_price)
+        changed and notify_observers(time: Time.now, price: current_price)
       end
       last_price = current_price
 
